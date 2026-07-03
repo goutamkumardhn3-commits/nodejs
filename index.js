@@ -65,7 +65,7 @@
 
 // const input = process.argv;
 
-// fs.writeFileSync(input[2], input[3]);
+// fs.writeFileSync(input[2], input[3]);k
 
 const fs = require('fs');
 
