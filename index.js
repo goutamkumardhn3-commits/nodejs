@@ -51,10 +51,31 @@
 // console.log('Hello World'.green);
 // console.log('Hello World'.red);
 // console.log('Hello World  blue'.bgBlue);
-const data = require('./data');
-const http = require('http');
-http.createServer((req, res)=> {
-    res.writeHead(200, { 'Content-Type': 'application/json'});
-    res.write(JSON.stringify(data) );
-    res.end();
-}).listen(1500);
+// const data = require('./data');
+// const http = require('http');
+// http.createServer((req, res)=> {
+//     res.writeHead(200, { 'Content-Type': 'application/json'});
+//     res.write(JSON.stringify(data) );
+//     res.end();
+// }).listen(1500);
+
+// console.log(process.argv[0]);
+
+// const fs = require('fs');
+
+// const input = process.argv;
+
+// fs.writeFileSync(input[2], input[3]);
+
+const fs = require('fs');
+
+const input = process.argv;
+
+if(input[2] == 'add') {
+    // fs.writeFileSync(input[3], input[4]);
+    fs.writeFileSync(input[3], input[4]);
+} else if(input[2] == 'remove') {
+    fs.unlinkSync(input[3]);
+} else {
+    console.log('Invalid input');
+}
