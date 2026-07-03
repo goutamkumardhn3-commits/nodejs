@@ -39,10 +39,15 @@
 //     res.end();
 // }).listen(1500);
 
-const http = require('http');
-const responseHandler = (req, res) => {
-    res.write('<h1>Hello World</h1>');
-    res.end();
-    // return <div>hello Goutam</div>;
-};
-http.createServer(responseHandler).listen(1500);
+// const http = require('http');
+// const responseHandler = (req, res) => {
+//     res.write('<h1>Hello World</h1>');
+//     res.end();
+//     // return <div>hello Goutam</div>;
+// };
+// http.createServer(responseHandler).listen(1500);
+
+const color = require('colors');
+console.log('Hello World'.green);
+console.log('Hello World'.red);
+console.log('Hello World'.bgBlue);

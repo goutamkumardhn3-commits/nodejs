@@ -1,0 +1,27 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "Nde tutorial",
+  "keywords": [
+    "code"
+  ],
+  "homepage": "https://github.com/goutamkumardhn3-commits/nodejs#readme",
+  "bugs": {
+    "url": "https://github.com/goutamkumardhn3-commits/nodejs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goutamkumardhn3-commits/nodejs.git"
+  },
+  "license": "ISC",
+  "author": "goutam",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "simple-node-logger": "^21.8.12"
+  }
+}
