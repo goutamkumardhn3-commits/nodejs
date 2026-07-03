@@ -47,7 +47,14 @@
 // };
 // http.createServer(responseHandler).listen(1500);
 
-const color = require('colors');
-console.log('Hello World'.green);
-console.log('Hello World'.red);
-console.log('Hello World'.bgBlue);
+// const color = require('colors');
+// console.log('Hello World'.green);
+// console.log('Hello World'.red);
+// console.log('Hello World  blue'.bgBlue);
+const data = require('./data');
+const http = require('http');
+http.createServer((req, res)=> {
+    res.writeHead(200, { 'Content-Type': 'application/json'});
+    res.write(JSON.stringify(data) );
+    res.end();
+}).listen(1500);
