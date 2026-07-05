@@ -171,11 +171,48 @@
 // })
 // app.listen(9000);
 
+// const express = require('express');
+// const app = express();
+
+// const path = require('path');
+// const publicpath = path.join(__dirname, 'public');
+
+// app.use(express.static(publicpath));
+// app.listen(9000);
+
 const express = require('express');
 const app = express();
 
 const path = require('path');
-const publicpath = path.join(__dirname, 'public');
+const publicPath = path.join(__dirname, 'public');
+const viewPath = path.join(__dirname, 'views');
 
-app.use(express.static(publicpath));
+app.set('view engine', 'ejs');
+
+app.get('/', (_, res) => {
+    res.sendFile(`${publicPath}/index.html`);
+});
+
+app.get('/profile', (_, res) => {
+    const user = {
+        name: 'Goutam',
+        email: 'xyz@gmail.com',
+        city: 'New York',
+        skills: ['JavaScript', 'Node.js', 'Express', 'React']
+    };
+    res.render(`${viewPath}/profile.ejs`, { user});
+});
+
+app.get('/about', (_, res) => {
+    res.sendFile(`${publicPath}/about.html`);
+});
+
+app.get('/home', (_, res) => {
+    res.sendFile(`${publicPath}/home.html`);
+});
+
+app.get(/.*/, (_, res) => {
+    res.sendFile(`${publicPath}/404NotFoundPage.html`);
+});
+
 app.listen(9000);
